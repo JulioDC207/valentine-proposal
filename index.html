@@ -93,6 +93,14 @@
             }
         }
 
+        .character-emoji {
+            font-size: 100px;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: bounce 2s ease-in-out infinite;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
         .character-image {
             width: 150px;
             height: 150px;
@@ -242,7 +250,7 @@
     
     <div class="container">
         <div id="question">
-            <img id="characterImg" class="character-image" src="https://i.pinimg.com/originals/43/ae/eb/43aeeb84838e760dc907213e46e2a261.gif" alt="Bubu y Dudu">
+            <div class="character-emoji" id="characterEmoji">🐼💕🐻</div>
             <h1>¿Quieres ser mi San Valentín?</h1>
             <div class="buttons-container">
                 <button id="yesBtn">Sí 💕</button>
@@ -258,25 +266,25 @@
     </div>
 
     <script>
-        // Array of Bubu and Dudu images
-        const bubuDuduImages = [
-            'https://i.pinimg.com/originals/43/ae/eb/43aeeb84838e760dc907213e46e2a261.gif',
-            'https://i.pinimg.com/originals/f9/64/ff/f964ff2f0e0b539f9afbfc45a0d7ab4c.gif',
-            'https://i.pinimg.com/originals/cf/79/67/cf7967c49c26b55a16c4d76f22b2be5e.gif',
-            'https://i.pinimg.com/originals/0e/3d/95/0e3d958be9c98c5b6e12cb0fa01b8603.gif',
-            'https://i.pinimg.com/originals/d3/c5/87/d3c587ec3b8a2dde8e3ef908129f2a41.gif',
-            'https://i.pinimg.com/736x/cd/04/ac/cd04acc9f5df3b3e86be2cd5f9632a61.jpg',
-            'https://i.pinimg.com/736x/cd/38/60/cd3860a7e6bdd6ad5f058fa19a7be53f.jpg'
+        // Array of romantic emoji combinations
+        const emojiCombos = [
+            '🐼💕🐻',
+            '🐻❤️🐼',
+            '💑',
+            '👫💖',
+            '🐻‍❄️💝🐼',
+            '💕🐾💕',
+            '🥰💑🥰'
         ];
 
-        let currentImageIndex = 0;
-        const characterImg = document.getElementById('characterImg');
+        let currentEmojiIndex = 0;
+        const characterEmoji = document.getElementById('characterEmoji');
 
-        // Change image every 3 seconds
+        // Change emoji every 2 seconds
         setInterval(() => {
-            currentImageIndex = (currentImageIndex + 1) % bubuDuduImages.length;
-            characterImg.src = bubuDuduImages[currentImageIndex];
-        }, 3000);
+            currentEmojiIndex = (currentEmojiIndex + 1) % emojiCombos.length;
+            characterEmoji.textContent = emojiCombos[currentEmojiIndex];
+        }, 2000);
 
         // Create floating hearts
         function createHearts() {
