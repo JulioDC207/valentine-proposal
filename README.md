@@ -80,5 +80,3 @@ Para ver la página localmente, simplemente abre `index.html` en tu navegador.
 Este proyecto es de uso libre. ¡Úsalo para tu propuesta especial! 💖
 
 ---
-
-Hecho con 💕 para una persona especial
